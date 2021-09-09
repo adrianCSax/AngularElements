@@ -1,5 +1,5 @@
 <div class="topnav">
-    <a [routerLink]="['/home']" [ngClass]="{'active': isItActive(0)}" id="0" (click)="isPressed($event)">Home</a>
-    <a [routerLink]="['/projects']" [ngClass]="{'active': isItActive(1)}" id="1" (click)="isPressed($event)">Projects</a>
-    <a [routerLink]="['/contact']" [ngClass]="{'active': isItActive(2)}" id="2" (click)="isPressed($event)">Contact</a>
+    <a [routerLink]="['/home']" routerLinkActive="active" id="0">Home</a>
+    <a [routerLink]="['/projects']" routerLinkActive="active" id="1">Projects</a>
+    <a [routerLink]="['/contact']" routerLinkActive="active" id="2">Contact</a>
 </div>
