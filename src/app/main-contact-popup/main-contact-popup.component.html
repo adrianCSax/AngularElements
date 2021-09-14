@@ -1,14 +1,14 @@
 <div class="container">
-    <form>
+    <form id="larios">
       <label for="{{namelabel}}">{{ namelabel }}</label>
-      <input type="text" name="{{namelabel}}" [(ngModel)]="name" placeholder="Your name..">
+      <input type="text" class="nameClass" name="{{namelabel}}" id="name" [(ngModel)]="name" placeholder="Your name..">
   
       <label for="{lastnamelabel}">{{ lastnamelabel }}</label>
-      <input type="text" name="{{lastnamelabel}}" [(ngModel)]="lastname" placeholder="Your last name..">
+      <input type="text"  class="lastNameClass" name="{{lastnamelabel}}" [(ngModel)]="lastname" placeholder="Your last name..">
   
       <label for="countrylabel">{{ countrylabel }}</label>
-      <select name="{{ countrylabel }}" [(ngModel)]="countryselected">
-        <option *ngFor="let country of countries" [ngValue]="country">
+      <select name="{{ countrylabel }}" [(ngModel)]="countryselected" class="countryClass">
+        <option *ngFor="let country of countries" [ngValue]="country" >
             {{country}}
         </option>
       </select>
@@ -16,7 +16,7 @@
       <label for="subject">Subject</label>
       <textarea id="subject" name="subject" [(ngModel)]="subjectvalue" placeholder="Write something.." style="height:200px"></textarea>
   
-      <input type="submit" value="Submit" (click)="getInfo()">
+      <input type="submit" value="Submit" id="submit" (click)="getInfo()">
   
     </form>
   </div>

@@ -1,6 +1,4 @@
-import { Component, Injector } from '@angular/core';
-import { createCustomElement } from '@angular/elements';
-import { MainContactPopupComponent } from './main-contact-popup/main-contact-popup.component';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',

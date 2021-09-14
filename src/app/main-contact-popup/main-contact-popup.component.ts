@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-main-contact-popup',
@@ -12,7 +13,7 @@ export class MainContactPopupComponent implements OnInit {
   @Input() lastnamelabel: string;
   @Input() countries: string [];
   @Input() countrylabel: string;
-  @Output() formObject: any;
+  @Output() formObject: EventEmitter<any>;
   lastname: string;
   name: string;
   countryselected: any;
@@ -20,14 +21,15 @@ export class MainContactPopupComponent implements OnInit {
 
 
   constructor() { 
-    this.namelabel = "Name";
+    this.namelabel = "name";
     this.name = "";
-    this.lastnamelabel = "Last Name";
+    this.lastnamelabel = "lastname";
     this.lastname = "";
     this.countries = ["Spain", "USA", "Austria", "Netherlands", "United Kingdom"];
     this.countrylabel = "Country";
     this.subjectvalue = "";
     this.countryselected = "";
+    this.formObject = new EventEmitter<any>();
   }
 
   ngOnInit(): void {
@@ -40,9 +42,7 @@ export class MainContactPopupComponent implements OnInit {
       'lastname': this.lastname,
       'country': this.countryselected,
       'subject': this.subjectvalue
-    }
-    console.log(object);
-    this.formObject = object;
+    };
+    return this.formObject.emit(object);
   }
-
 }
